@@ -4,7 +4,7 @@
 ZONE_ID="Z00486442XDM8G"
 DOMAIN="aws43.xyz"
 SG_NAME="allow-all"
-
+env=dev
 #############################
 
 
