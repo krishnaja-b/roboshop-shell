@@ -7,3 +7,5 @@ yum install nginx -y
  unzip /tmp/frontend.zip
 
 
+
+
