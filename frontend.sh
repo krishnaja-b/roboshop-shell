@@ -6,3 +6,4 @@ yum install nginx -y
  cd /usr/share/nginx/html
  unzip /tmp/frontend.zip
 
+
