@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##### Change these values ###
-ZONE_ID="Z00486442XDM8G7vBE045"
+ZONE_ID="Z013366722COOZOYCJ4IN"
 DOMAIN="aws43.xyz"
 SG_NAME="allow-all"
 env=dev
