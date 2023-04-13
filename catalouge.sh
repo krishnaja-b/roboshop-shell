@@ -17,3 +17,4 @@ yum install mongodb-org-shell -y
 mongo --host mongodb.aws43.xyz </app/schema/catalogue.js
 
 
+
