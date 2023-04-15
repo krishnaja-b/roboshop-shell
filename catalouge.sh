@@ -17,7 +17,7 @@ unzip /tmp/catalogue.zip &>>{log_file}
 print_head "installing nodejs dependencies"
 npm install &>>{log_file}
 print_head "copy systemd service file"
-cp configs/catalouge.service /etc/systemd/system/catalouge.service &>>{log_file}
+cp  ${code_dir}/configs/catalouge.service /etc/systemd/system/catalouge.service &>>{log_file}
 print_head "reload systemd"
 systemctl daemon-reload &>>{log_file}
 print_head "enable catalouge service"
