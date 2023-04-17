@@ -1,6 +1,6 @@
 source common.sh
 print_head "setup mogodb repository"
-cp code_dir /configs/mongodb.repo /etc/yum.repos.d/mongo.repo &>>${log_file}
+cp ${code_dir}/configs/mongodb.repo /etc/yum.repos.d/mongo.repo &>>${log_file}
 print_head "install mongodb"
 yum install mongodb-org -y &>>${log_file}
 print_head "update mongodb listen address"
