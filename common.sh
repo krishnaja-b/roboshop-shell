@@ -10,6 +10,6 @@ if [ $1 -eq 0 ]; then
    echo SUCCESS
    else
    echo FAILURE
-   exit
+   exit1
    fi
    }
