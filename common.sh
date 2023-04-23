@@ -11,7 +11,7 @@ if [ $1 -eq 0 ]; then
    else
    echo FAILURE
    echo "read the log file ${log_file} for more information about eror"
-   exit1
+   exit 1
    fi
    }
 
