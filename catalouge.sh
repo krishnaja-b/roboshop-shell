@@ -41,15 +41,19 @@ status_check $?
 print_head "enable catalouge service"
 systemctl enable catalogue &>>{log_file}
 status_check $?
+
 print_head "start catalouge service"
-systemctl start catalogue &>>{log_file}
+systemctl restart catalogue &>>{log_file}
 status_check $?
+
 print_head "copy mongodb repo file"
 cp configs/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>{log_file}
 status_check $?
+
 print_head "install mongo clint"
 yum install mongodb-org-shell -y &>>{log_file}
 status_check $?
+
 print_head "load schema"
 mongo --host mongodb.aws43.xyz </app/schema/catalogue.js &>>{log_file}
 status_check $?
