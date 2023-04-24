@@ -1,7 +1,7 @@
 source common.sh
 
 component=catalogue
-nodejs
+ node_js
 
 
 
