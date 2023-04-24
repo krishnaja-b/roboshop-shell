@@ -15,7 +15,7 @@ if [ $1 -eq 0 ]; then
    fi
    }
 
-   schema_setup(){
+   schema_setup() {
      if [ "${schema_type}" == "mongo" ]; then
          print_head "copy mongodb repo file"
           cp configs/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>{log_file}
@@ -33,7 +33,7 @@ if [ $1 -eq 0 ]; then
    }
 
 
-   node_js(){
+   node_js() {
      print_head "configure nodejs repo"
      curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>{log_file}
      status_check $?
@@ -90,5 +90,7 @@ if [ $1 -eq 0 ]; then
 
      schema_setup
  }
+
+
 
 
