@@ -1,4 +1,12 @@
+
 source common.sh
+
+mysql_root_password=$1
+if [ -z "${mysql_root_password}" ]; then
+echo -e "\e[31m"missing mysql root password argument"\e[0m"
+exit 1
+fi
+
 
 print_head "disabling mysql version 8"
 dnf module disable mysql -y &>>{log_file}
@@ -12,18 +20,18 @@ print_head "installing my sql server"
 yum install mysql-community-server -y &>>{log_file}
 status_check $?
 
-print_head "enable my sql server"
+print_head "enable my sql service"
 systemctl enable mysqld &>>{log_file}
 status_check $?
 
-print_head "start mysql server"
+print_head "start mysql service"
 systemctl start mysqld &>>{log_file}
 status_check $?
 
 print_head "set root password"
-mysql_secure_installation --set-root-pass RoboShop@1 &>>{log_file}
+echo show databases | mysql -uroot -p${mysql_root_password} &>>{log_file}
+if [ $? -ne 0 ]; then
+mysql_secure_installation --set-root-pass ${mysql_root_password} &>>{log_file}
+fi
 status_check $?
 
-print_head "to check password working r not"
-mysql -uroot -pRoboShop@1 &>>{log_file}
-status_check $?
