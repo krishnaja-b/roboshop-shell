@@ -35,3 +35,4 @@ mysql_secure_installation --set-root-pass ${mysql_root_password} &>>{log_file}
 fi
 status_check $?
 
+
