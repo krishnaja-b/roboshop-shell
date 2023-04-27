@@ -119,10 +119,12 @@ if [ $1 -eq 0 ]; then
  status_check $?
 
  app_prereq_setup
+
  print_head "downloading dependencies and packaage"
- mvn clean package &>>{log_file}
+ mvn clean package &>>${log_file}
  mv target/${component}-1.0.jar ${component}.jar &>>{log_file}
  status_check $?
+
  # schema setup function
  schema_setup
  # systemd function
