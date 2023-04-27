@@ -47,14 +47,14 @@ if [ $1 -eq 0 ]; then
           mongo --host mongodb.aws43.xyz </app/schema/${component}.js &>>{log_file}
           status_check $?
 
-          fi
-          elif [ "${schema_type}" == "mysql" ]; then
-             print_head "install mysql clint"
-            yum install mysql -y
+
+           elif [ "${schema_type}" == "mysql" ]; then
+            print_head "install mysql clint"
+            yum install mysql -y &>>{log_file}
             status_check $?
 
             print_head "load schema"
-           mysql -h mysql.aws43.xyz -uroot -p"${mysql_root_password}" < /app/schema/shipping.sql
+           mysql -h mysql.aws43.xyz -uroot -p${mysql_root_password} < /app/schema/shipping.sql
             status_check $?
            fi
            }
