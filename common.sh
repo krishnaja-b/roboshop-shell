@@ -99,7 +99,7 @@ if [ $1 -eq 0 ]; then
      status_check $?
 
 
-
+cd /app
      print_head "installing nodejs dependencies"
      npm install &>>${log_file}
      status_check $?
