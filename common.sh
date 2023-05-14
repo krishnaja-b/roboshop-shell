@@ -98,7 +98,7 @@ if [ $1 -eq 0 ]; then
      yum install nodejs -y &>>${log_file}
      status_check $?
 
-
+app_prereq_setup
 cd /app
      print_head "installing nodejs dependencies"
      npm install &>>${log_file}
