@@ -45,7 +45,7 @@ if [ $1 -eq 0 ]; then
           status_check $?
 
           print_head "load schema"
-          mongo --host mongodb.aws43.xyz </app/schema/${component}.js &>>{log_file}
+          mongo --host mongodb-dev.aws43.xyz </app/schema/${component}.js &>>{log_file}
           status_check $?
 
 
@@ -55,7 +55,7 @@ if [ $1 -eq 0 ]; then
             status_check $?
 
             print_head "load schema"
-           mysql -h mysql.aws43.xyz -uroot -p${mysql_root_password} < /app/schema/shipping.sql
+           mysql -h mysql-dev.aws43.xyz -uroot -p${mysql_root_password} < /app/schema/shipping.sql
             status_check $?
            fi
            }
